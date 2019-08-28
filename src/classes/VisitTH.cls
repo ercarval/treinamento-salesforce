@@ -1,8 +1,13 @@
-
+/**
+ * @author: ercarval
+ */
 public with sharing class VisitTH extends TriggerHandler {
 
     List<Visita__c> newVisits;
     Map<Id, Visita__c> oldVisits;
+
+    AccountEnricher accountEnricher;
+    VisitFilter filter;
 
     public VisitTH () {
         this ( (List<Visita__c>) Trigger.new 
@@ -12,18 +17,27 @@ public with sharing class VisitTH extends TriggerHandler {
     public VisitTH (List<Visita__c> newVisits, Map<Id, Visita__c> oldVisits) {
         this.newVisits = newVisits;
         this.oldVisits = oldVisits;
+
+        accountEnricher = new AccountEnricher();
+        filter = new VisitFilter();
     }
 
     override
     public void afterInsert () {
-        System.debug ( JSON.serialize (newVisits) );
+        enrichAccountWithLastExecutedDate();
     }
 
     override
     public void afterUpdate () {
-        System.debug ( JSON.serialize (newVisits) );
-        System.debug ( JSON.serialize (oldVisits) );
+        enrichAccountWithLastExecutedDate();
     }
 
+    public void enrichAccountWithLastExecutedDate () {
 
+        List<Visita__c> executedVisits = 
+                filter.filterJustExecutedVisitForAccount (
+                    newVisits, oldVisits);
+        
+        accountEnricher.enrichWithLastExecutedVisit (executedVisits);
+    }
 }
