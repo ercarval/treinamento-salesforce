@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "c/accountZipAddress": [
+                "accountZipAddress/accountZipAddress.js"
+            ],
+            "c/zipCode": [
+                "zipCode/zipCode.js"
+            ],
+            "c/componentParent": [
+                "componentParent/componentParent.js"
+            ],
+            "c/componentChildOne": [
+                "componentChildOne/componentChildOne.js"
+            ],
+            "c/componentChieldTwo": [
+                "componentChieldTwo/componentChieldTwo.js"
+            ],
+            "c/state": [
+                "state/state.js"
+            ],
+            "c/adress": [
+                "adress/adress.js"
+            ],
+            "c/consoleComponent": [
+                "consoleComponent/consoleComponent.js"
+            ],
+            "c/reciveFunctionAsApi": [
+                "reciveFunctionAsApi/reciveFunctionAsApi.js"
+            ],
+            "c/passFunctionByParam": [
+                "passFunctionByParam/passFunctionByParam.js"
+            ]
+        },
+        "experimentalDecorators": true
+    },
+    "include": [
+        "**/*",
+        "../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

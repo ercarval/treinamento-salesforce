@@ -1,11 +1,11 @@
 public class Visit {
-    
-    //public 
+
+    //public
     //protected
-    //private 
+    //private
     //default
     //Sintaxe
-    //[modificadores] <tipo de retorno> <nomeMetodo> ( [Parametros...]) {} 
+    //[modificadores] <tipo de retorno> <nomeMetodo> ( [Parametros...]) {}
     public Visit checkin () {
         return new Visit();
     }

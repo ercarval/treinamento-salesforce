@@ -23,11 +23,11 @@ public class VisitFixtureFactory {
     }
 
     public static Visita__c create ( String zipCode ) {
-        return create ( buildVisit(zipCode) );    
+        return create ( buildVisit(zipCode) );
     }
 
     public static Visita__c create ( Account account, String zipCode ) {
-        return create ( buildVisit(account, zipCode) );    
+        return create ( buildVisit(account, zipCode) );
     }
 
     public static Visita__c create ( Visita__c visit ) {
@@ -35,7 +35,7 @@ public class VisitFixtureFactory {
         insert visit;
 
         return visit;
-    } 
+    }
 
 
 }

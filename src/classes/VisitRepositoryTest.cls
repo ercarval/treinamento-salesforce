@@ -11,12 +11,12 @@ private class VisitRepositoryTest {
 
         Visita__c visit = VisitFixtureFactory.create(account, '1222343');
 
-        VisitRepository repository = new VisitRepository(); 
-        
+        VisitRepository repository = new VisitRepository();
+
         List<Visita__c> visits = repository.findByZipCode ('122%');
 
         System.assert ( !visits.isEmpty() );
-        System.assertEquals ( visit.Id , visits.get(0).Id );
+        System.assertEquals ( visit.Id, visits.get(0).Id );
 
     }
 
@@ -26,7 +26,7 @@ private class VisitRepositoryTest {
         Visita__c visit = VisitFixtureFactory.create('2343');
 
         VisitRepository repository = new VisitRepository();
-        
+
         List<Visita__c> visits = repository.findByZipCode ('122%');
 
         System.assert ( visits.isEmpty() );

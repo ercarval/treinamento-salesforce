@@ -1,0 +1,43 @@
+<template>
+
+    <div class="slds-card slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none ">
+        <div class="slds-grid slds-wrap slds-grid_vertical-align-center slds-p-horizontal_small">
+            <div class="slds-col slds-p-horizontal_small slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-small-size_3-of-12">
+                <c-component-child-one class="zip-code" label="Cep" zip-code={_address.zipCode}
+                    onchangezipcode={handleZipCode} onaddressfound={handleAddressFound}>
+                </c-component-child-one>
+            </div>
+            <div class="slds-col slds-p-horizontal_small slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-small-size_5-of-12">
+
+                <lightning-input name="street" label="street" value={_address.street} max-length="50" onchange={handleTexts} required>
+                </lightning-input>
+            </div>
+
+        </div>
+
+        <div class="slds-grid slds-wrap slds-grid_vertical-align-center slds-p-horizontal_small">
+            <div class="slds-col slds-p-horizontal_small slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12">
+
+                <lightning-input name="city" label="city" value={_address.city} max-length="50" onchange={handleTexts} required>
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-p-horizontal_small slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-small-size_6-of-12">
+
+                <c-state class="state" label="State" state={_address.state} onchangestate={handleState}>
+                </c-state>
+
+            </div>
+
+        </div>
+        
+        <div class="slds-grid slds-wrap slds-grid_vertical-align-center slds-p-horizontal_small">
+            <div
+                class="slds-col slds-p-horizontal_small slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-small-size_5-of-12">
+                <c-component-chield-two class="address" address={_address}>
+                </c-component-chield-two>
+            </div>
+        </div>
+    </div>
+
+</template>

@@ -1,0 +1,21 @@
+<template>
+
+    <lightning-input
+        required
+        type="search"
+        onchange={handleChange}
+        class="slds-m-bottom_small"
+        label={label}
+        max-length="9"
+        value={_zipCode}
+        disabled={disabled}
+        pattern="[0-9]{5}-[0-9]{3}"
+        message-when-pattern-mismatch="O CEP informado é inválido, por favor informe um CEP no formato '00000-000"
+        message-when-value-missing="Por favor, preencha o CEP"
+        id="zipCodeSearchComp">
+</lightning-input>
+<template if:true={isLoading}>
+    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+</template>
+
+</template>

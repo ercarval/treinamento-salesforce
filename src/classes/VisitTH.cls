@@ -10,8 +10,8 @@ public with sharing class VisitTH extends TriggerHandler {
     VisitFilter filter;
 
     public VisitTH () {
-        this ( (List<Visita__c>) Trigger.new 
-            , (Map<Id, Visita__c>) Trigger.oldMap );
+        this ( (List<Visita__c>) Trigger.new
+               , (Map<Id, Visita__c>) Trigger.oldMap );
     }
 
     public VisitTH (List<Visita__c> newVisits, Map<Id, Visita__c> oldVisits) {
@@ -34,10 +34,10 @@ public with sharing class VisitTH extends TriggerHandler {
 
     public void enrichAccountWithLastExecutedDate () {
 
-        List<Visita__c> executedVisits = 
-                filter.filterJustExecutedVisitForAccount (
-                    newVisits, oldVisits);
-        
+        List<Visita__c> executedVisits =
+            filter.filterJustExecutedVisitForAccount (
+                newVisits, oldVisits);
+
         accountEnricher.enrichWithLastExecutedVisit (executedVisits);
     }
 }

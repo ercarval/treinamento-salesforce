@@ -1,0 +1,29 @@
+<apex:page standardController="Account" extensions="ZipCodeAddressCtrl">
+    
+    <apex:slds/>
+
+    <div class="slds-scope">
+
+        <apex:form>
+            <apex:pageBlock title="My Content" mode="edit">
+                <apex:pageBlockButtons>
+                    <apex:commandButton action="{!save}" value="Save"/>
+                    <apex:commandButton action="{!loadZipCode}" value="Busca Cep" />
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection title="My Content Section" columns="2">
+                    <apex:inputField value="{!account.name}"/>
+                    <apex:inputField value="{!account.site}"/>
+                    <apex:inputField value="{!account.type}"/>
+                    <apex:inputField value="{!account.accountNumber}"/>
+                    <apex:inputField value="{!account.billingPostalCode}" required="true"/>
+                     
+                    <apex:inputField value="{!account.billingStreet}"/>
+                    <apex:inputField value="{!account.billingCity}"/>
+                    <apex:inputField value="{!account.billingState}"/>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:form>
+
+    </div>
+    
+</apex:page>

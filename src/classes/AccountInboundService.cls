@@ -8,7 +8,8 @@ global class AccountInboundService {
     static Customer store (Customer customer) {
 
         Account account = new Account ( Name = customer.name
-                            , BillingStreet = customer.billingAddress );
+                                               , BillingStreet = customer.billingAddress
+                                        , Id = customer.id );
 
         new AccountRepository().save (account);
 
@@ -16,10 +17,10 @@ global class AccountInboundService {
 
         return customer;
     }
-    /*
+
     @HttpPost
     global static Account save (Account account) {
-        return store(account);
+        return new AccountRepository().save (account);
     }
-    */
+
 }
